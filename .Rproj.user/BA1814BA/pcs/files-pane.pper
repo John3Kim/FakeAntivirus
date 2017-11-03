@@ -1,0 +1,9 @@
+{
+    "path" : "~/Desktop/FakeAntivirus",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
