@@ -1,6 +1,7 @@
 #if i give up, use fileseek
-
 import os, subprocess
+
+folder = '/Users/johnkim/Desktop/Fakes'
 
 def scan_contents(file_path):
     with open(file_path, 'rb') as file_input:
@@ -22,9 +23,20 @@ def quarantine_file(file_to_quarantine):
         subprocess.call(['mkdir','Quarantined_Files'])
         
     subprocess.call(['mv', file_to_quarantine, 'Quarantined_Files'])
-    
 
-        
+# Convert this into a list
+def traverse_dir(directory = folder):
+    lst_directory = []
+    
+    for root, dirs, files in os.walk(directory, topdown=True):
+        for name in files:
+            lst_directory.append(os.path.join(root,name))
+
+        '''
+        for name in dirs:
+            print(os.path.join(root,name))
+        '''
+    return lst_directory
         
 
 
